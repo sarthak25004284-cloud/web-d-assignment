@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox Pricing Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #b11d67;
+      --card-bg: rgba(11, 1, 1, 0.05);
+      --muted: #4c4747;
+      --accent: #dd301d;
+      --green: #2b8e54;
+      --shadow: 0 6px 18px rgba(16, 6, 6, 0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Roboto Mono', monospace;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 55%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 30px;
+    }
+
+    .wrap{
+      max-width:1200px;
+      margin:30px auto;
+    }
+
+    .pricing-grid{
+      display:flex;
+      gap:36px;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      flex:1 1 300px;
+      background:var(--card-bg);
+      padding:36px 28px 28px;
+      border-radius:6px;
+      box-shadow:var(--shadow);
+      min-width:260px;
+      position:relative;
+    }
+
+    .card h3{
+      margin:0 0 8px 0;
+      text-align:center;
+      font-weight:700;
+      letter-spacing:2px;
+      color:#222;
+    }
+
+    .price{
+      font-family: 'Bungee', cursive;
+      font-size:48px;
+      text-align:center;
+      margin:10px 0 18px;
+      letter-spacing:1px;
+    }
+
+    .per{
+      font-size:18px;
+      display:inline-block;
+      margin-left:6px;
+      vertical-align:middle;
+      font-weight:700;
+    }
+
+    .features{
+      margin:12px 0 22px;
+      padding:0 20px;
+      color:var(--muted);
+    }
+
+    .feature{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin:8px 0;
+      font-size:15px;
+    }
+
+    .feature svg{width:18px;height:18px;}
+
+    .btn-wrap{display:flex;justify-content:center}
+    .btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:6px;
+      background:var(--accent);
+      color:rgb(191, 174, 174);
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 4px 10px rgba(231,76,60,0.25);
+      border:0;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    /* special styling for middle card to look slightly elevated */
+    .card.center{
+      transform: translateY(0);
+    }
+
+    /* small screens */
+    @media (max-width:880px){
+      .price{font-size:40px}
+      .pricing-grid{gap:18px}
+    }
+
+    @media (max-width:640px){
+      .pricing-grid{flex-direction:column}
+      .wrap{padding-bottom:40px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="pricing-grid">
+
+      <article class="card">
+        <h3>Essential</h3>
+        <div class="price">₹11,999<span class="per">/month</span></div>
+        <div class="features">
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 1TB Storage</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 10 User</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9l6 6M15 9l-6 6" stroke="#e74c3c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Support</div>
+        </div>
+        <div class="btn-wrap"><button class="btn">Sign Up</button></div>
+      </article>
+
+      <article class="card center">
+        <h3>Advanced</h3>
+        <div class="price">₹19,999<span class="per">/month</span></div>
+        <div class="features">
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 10TB Storage</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 50 Users</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Phone & Email Support</div>
+        </div>
+        <div class="btn-wrap"><button class="btn">Sign Up</button></div>
+      </article>
+
+      <article class="card">
+        <h3>Ultimate</h3>
+        <div class="price">₹49,999<span class="per">/month</span></div>
+        <div class="features">
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 100TB Storage</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 1000 Users</div>
+          <div class="feature"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#1b9b4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 24/7 Support</div>
+        </div>
+        <div class="btn-wrap"><button class="btn">Sign Up</button></div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>
